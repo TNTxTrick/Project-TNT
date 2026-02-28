@@ -61,6 +61,8 @@ module.exports = (bot) => {
   // Lệnh /ai để gọi AI với mô hình được chọn
   bot.onText(/\/ai (\d+)?\s*(.+)/, async (msg, match) => {
     const chatId = msg.chat.id;
+    // Hiển thị trạng thái "đang soạn tin nhắn" (typing...)
+    bot.sendChatAction(chatId, 'typing');
     const modelIndex = parseInt(match[1], 10) - 1; // Chỉ số của model
     const userMessage = match[2]; // Nội dung tin nhắn
 

@@ -42,6 +42,8 @@ module.exports = (bot) => {
   // Xử lý khi người dùng nhập /menu
   bot.onText(/\/menu/, (msg) => {
     const chatId = msg.chat.id;
+    // Hiển thị trạng thái "đang soạn tin nhắn" (typing...)
+    bot.sendChatAction(chatId, 'typing');
     const commands = getCommands();
     const categories = Object.keys(commands);
 

@@ -25,19 +25,20 @@ module.exports = (bot, config) => {
       return;
     }
 
-    // Lấy thông tin người dùng được tag
-    const taggedUser = replyToMessage.entities?.find(entity => entity.type === 'mention')?.user;
-    if (!taggedUser) {
-      bot.sendMessage(chatId, 'Vui lòng tag người dùng cần kick.');
+    // Lấy thông tin người dùng từ tin nhắn được reply
+    const targetUser = replyToMessage.from;
+    if (!targetUser) {
+      bot.sendMessage(chatId, 'Không tìm thấy người dùng để kick.');
       return;
     }
 
-    const taggedUserId = taggedUser.id;
+    const targetUserId = targetUser.id;
 
-    // Kick người dùng
-    bot.banChatMember(chatId, taggedUserId)
+    // Kick người dùng (ban rồi unban ngay để kick)
+    bot.banChatMember(chatId, targetUserId)
       .then(() => {
-        bot.sendMessage(chatId, `Người dùng ${taggedUser.first_name} đã bị kick khỏi nhóm.`);
+        bot.unbanChatMember(chatId, targetUserId);
+        bot.sendMessage(chatId, `✅ Người dùng ${targetUser.first_name} đã bị kick khỏi nhóm.`);
       })
       .catch((err) => {
         console.error('Không thể kick người dùng:', err);

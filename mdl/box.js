@@ -3,8 +3,8 @@
  * @category Hỗ trợ
  * @author tnt
  * @date 2025-03-01
- * @usage (/rename|setphoto|clear) 
- * @description Đổi tên, ảnh group, xóa tin nhắn.
+ * @usage /rename <tên> | /setphoto (reply ảnh) | /clear
+ * @description Quản lý nhóm: Đổi tên, ảnh đại diện, xóa tin nhắn.
  */
 const fs = require('fs');
 const path = require('path');

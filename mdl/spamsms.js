@@ -1,3 +1,11 @@
+/**
+ * @command /spamsms
+ * @category Tiện ích
+ * @author tnt
+ * @date 2025-03-01
+ * @usage /spamsms <số điện thoại>
+ * @description Spam SMS đến số điện thoại chỉ định.
+ */
 const axios = require('axios');
 
 module.exports = (bot) => {

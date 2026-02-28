@@ -1,3 +1,11 @@
+/**
+ * @command /welcome
+ * @category Quản trị
+ * @author tnt
+ * @date 2025-03-01
+ * @usage /welcome on/off
+ * @description Bật/tắt thông báo chào mừng khi có người mới tham gia.
+ */
 module.exports = (bot, config) => {
   let welcomeEnabled = true; // Mặc định bật thông báo
 

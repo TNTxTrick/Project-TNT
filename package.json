@@ -11,18 +11,19 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",
+    "adm-zip": "^0.5.16",
     "axios": "^1.7.9",
-    "node-fetch": "^3.3.2",
-    "node-telegram-bot-api": "^0.66.0", 
-    "adm-zip": "^0.5.16", 
     "base-64": "^1.0.0",
-    "chalk": "^5.4.1",
-    "crypto-js": "^4.2.0",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0",
     "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
     "express": "^4.21.2",
-    "puppeteer": "^24.2.1", 
-    "cheerio": "^1.0.0", 
+    "figlet": "^1.10.0",
     "fs": "^0.0.1-security",
-    "os": "^0.1.2"
+    "node-fetch": "^3.3.2",
+    "node-telegram-bot-api": "^0.66.0",
+    "os": "^0.1.2",
+    "puppeteer": "^24.2.1"
   }
 }
